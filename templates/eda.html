@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> EDA </title>
+{% endblock %}
+
+{% block body %}
+<h2>Class feature: {{class_feature}}</h2>
+<image src="{{url_for('static',filename = '/sns-heatmap.png')}}" />
+
+
+<!--{% for column in columns %}
+    {% if loop.index != 2 %}
+       
+    {% endif %}
+{% endfor %}
+-->
+{% endblock %}

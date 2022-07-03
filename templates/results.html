@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> results </title>
+{% endblock %}
+
+{% block body %}
+<p>File uploaded successfully</p>  
+<p>File Name: {{name}}</p> 
+<h1>Dataset: </h1>
+<button onclick=" window.open('/dataset','_blank')">View_dataset</button>
+
+{% for table in tables %}
+    <h2>{{titles[loop.index]}}</h2>
+    {{ table|safe }}
+{% endfor %}
+<br/>
+<br/>
+<form action='/eda' method = "post" >  
+    <label for="get_class_feature">Enter name of class feature</label>
+    <input type="text" id="get_class_feature" name="class_feature" />  
+    
+    <input type = "submit" value="Submit">  
+</form>
+
+{% endblock %}
