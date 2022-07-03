@@ -28,7 +28,7 @@ def results():
         summary_table = get_summary(dataset)
 
         #class_feature = request.form.get("class_feature")
-        return render_template("results.html", name = f.filename, tables=[summary_table.to_html(), dataset.describe().to_html()],titles = ['na','Dataset Summary', 'Columns Summary'])
+        return render_template("results.html", name = f.filename, tables=[summary_table.to_html(), dataset.describe().to_html()],titles = ['na','Dataset Summary', 'Columns Summary'],dataset_shape=str(dataset.shape))
 
 def parseCSV(filepath):
     dataset = pd.read_csv(filepath)
